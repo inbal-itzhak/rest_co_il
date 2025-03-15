@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bb3bd754-5559-4215-895b-b8579e6d2e2f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/rest_co_il.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/base_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/end_table_res_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/rest_page_make_reservation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/rest_type_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/restaurant_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/search_menu_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/search_results_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/tabit_order_reservation_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/top_menu_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/base_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/search_tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../SendEmailFromHtml/SendMail.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Codility/NewSockPairing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Codility/OneMoreSocksTry.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Codility/SocksPairing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Codility/anotherTry.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Orly/OrlyFirstTest/Animal excercise/Animals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Orly/OrlyFirstTest/Animal excercise/MainAnimal.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Orly/OrlyFirstTest/Animal excercise/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Orly/OrlyFirstTest/Course.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Orly/OrlyFirstTest/Hard_Disk.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Orly/OrlyFirstTest/MainCourse.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Orly/OrlyFirstTest/MainHardDisk.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Orly/OrlyFirstTest/MainStudent.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Orly/OrlyFirstTest/Student.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Orly/OrlyFirstTest/Student/Course.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Orly/OrlyFirstTest/Student/Student_main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Orly/OrlyFirstTest/Student/Students.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Orly/OrlyFirstTest/Student/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Orly/OrlyFirstTest/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Orly/OrlyFirstTest/file.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Real_Estate/Real_Estate_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Real_Estate/WebApplication/Customers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Real_Estate/WebApplication/Db_Helper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Real_Estate/WebApplication/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Real_Estate/WebApplication/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Real_Estate/WebApplication/templates/add_buyer_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Real_Estate/WebApplication/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Real_Estate/WebApplication/templates/search_buyer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Real_Estate/WebApplication/templates/search_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Real_Estate/WebApplication/templates/search_results.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Real_Estate/WebApplication/templates/success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../TestingInfra/ChuckNoris/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../TestingInfra/ChuckNoris/api_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../TestingInfra/ChuckNoris/api_queries.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../TestingInfra/ChuckNoris/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../YahooFinanace/API/api_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../YahooFinanace/API/api_queries.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../YahooFinanace/POM/home_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../YahooFinanace/api_tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../YahooFinanace/uitests.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2tIlQIGCpKZH4Szfpw7FzQLLaGe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.search_tests.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Dev\Automatiom_Course\Python\rest_co_il\pages" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="search_tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="rest_co_il" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/search_tests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.search_tests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-09665e90c3a7-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15026.15" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bb3bd754-5559-4215-895b-b8579e6d2e2f" name="Changes" comment="" />
+      <created>1740047451537</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1740047451537</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pages/search_results_page.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
