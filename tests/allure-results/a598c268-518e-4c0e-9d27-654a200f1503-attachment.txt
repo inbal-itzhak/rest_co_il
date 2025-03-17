@@ -1,0 +1,13 @@
+open_hours_elements > 0 2
+["א'-ש'", '08:00-22:00']
+days: א'-ש'
+hours: 08:00-22:00
+start day is א'
+end day is ש'
+['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+hours range: ['08:00', '22:00']
+start_time: 08:00:00
+end_time: 22:00:00
+now: 10:56:33.591155
+clicked search result
+is open attr = 

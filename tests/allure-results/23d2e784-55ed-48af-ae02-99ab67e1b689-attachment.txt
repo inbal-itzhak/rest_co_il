@@ -1,6 +1,0 @@
-sent text אגאדיר הרצליה
-len of search results = 1
-clicked search result
-expected rest name in test = אגאדיר הרצליה - AGADIR
-3
-37 חוות דעת ₪₪₪₪

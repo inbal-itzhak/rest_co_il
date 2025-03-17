@@ -1,5 +1,3 @@
-import time
-
 import allure
 import pytest
 
@@ -8,7 +6,7 @@ from tests.base_test import BaseTest
 
 class TestRestPage(BaseTest):
     data = ["קפה גרג אפק", "פרש דה מרקט ראש", "ביגה", "אגאדיר הרצליה", "ראנץ' האוס מצפה הימים"]
-    data2 = [ "אגאדיר הרצליה", "קפה גרג אפק"]
+    data2 = ["אגאדיר הרצליה", "קפה גרג אפק"]
 
     @pytest.mark.parametrize("text", data)
     @allure.description("test correct restaurant page opens")
@@ -33,7 +31,9 @@ class TestRestPage(BaseTest):
         assert text in rest_name
         with allure.step("get number of reviews from restaurant page"):
             reviews_amount = self.restaurant_page.get_reviews_amount()
-            print(f"reviews_amount is {reviews_amount}")
+            allure.attach(body=f"{reviews_amount}", name="number of reviews on restaurant page",
+                          attachment_type=allure.attachment_type.TEXT)
+            # print(f"reviews_amount is {reviews_amount}")
         assert reviews_amount is not None
         assert reviews_amount == num_of_reviews_search_results
 
@@ -59,19 +59,25 @@ class TestRestPage(BaseTest):
             self.search_results.click_on_search_result()
             self.restaurant_page.wait_for_rest_page_to_load()
             expected_rest_name = self.restaurant_page.get_rest_name()
-            print(f"expected rest name in test = {expected_rest_name}")
+            allure.attach(body=f"{expected_rest_name}", name="expected rest name in test",
+                          attachment_type=allure.attachment_type.TEXT)
+            # print(f"expected rest name in test = {expected_rest_name}")
         if self.restaurant_page.is_reservation_in_rest_page():
             with allure.step("if reservation is in restaurant page - make reservation"):
                 expected_reservation_data = self.restaurant_page.make_reservation_in_rest_page()
-                print(f"expected_reservation_data: {expected_reservation_data}")
+                allure.attach(body=f"{expected_reservation_data}", name="expected_reservation_data",
+                              attachment_type=allure.attachment_type.TEXT)
+                # print(f"expected_reservation_data: {expected_reservation_data}")
                 assert expected_reservation_data is not None, "all time slots are disabled"
                 self.confirm_reservation.wait_for_end_res_page_to_load()
             assert self.confirm_reservation.verify_rest_name(expected_rest_name) == True
             actual_reservation_data = self.confirm_reservation.get_reservation_data()
-            print(f"actual_reservation_data : {actual_reservation_data}")
+            allure.attach(body=f"{actual_reservation_data}", name="actual_reservation_data",
+                          attachment_type=allure.attachment_type.TEXT)
+            # print(f"actual_reservation_data : {actual_reservation_data}")
             assert actual_reservation_data == expected_reservation_data
         else:
             with allure.step("reservation is not is restaurant page - failing the test"):
-                assert self.restaurant_page.is_reservation_in_rest_page(), ("reservation is not in restaurant page - failing "
-                                                                      "the test")
-
+                assert self.restaurant_page.is_reservation_in_rest_page(), (
+                    "reservation is not in restaurant page - failing "
+                    "the test")

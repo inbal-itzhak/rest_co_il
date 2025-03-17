@@ -1,15 +1,11 @@
 import allure
-from selenium.common import NoSuchElementException, StaleElementReferenceException, TimeoutException
-from pages.search_menu_page import SearchMenuPage
+from selenium.common import NoSuchElementException, TimeoutException
 import time
 from pages.base_page import BasePage
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver import ActionChains
-
-from pages.search_results_page import SearchResultsPage
 
 
 class RestaurantPage(BasePage):
@@ -100,10 +96,14 @@ class RestaurantPage(BasePage):
                 is_open = rest_open.get_attribute("class")
                 print(f"is open attr = {is_open}")
                 if is_open == "closed":
-                    print("rest is closed")
+                    allure.attach(body="restaurant is closed", name="restaurant is closed",
+                                  attachment_type=allure.attachment_type.TEXT)
+                    # print("rest is closed")
                     return False
                 else:
-                    print("rest is open")
+                    allure.attach(body="restaurant is open", name="restaurant is open",
+                                  attachment_type=allure.attachment_type.TEXT)
+                    # print("rest is open")
                     return True
         except NoSuchElementException:
             print("could not retrieve opening hours")
@@ -130,7 +130,6 @@ class RestaurantPage(BasePage):
     @allure.step("make reservation from restaurant page")
     def make_reservation_in_rest_page(self):
         wait = WebDriverWait(self.driver, 10)
-        time_text = ""
         if self.is_reservation_in_rest_page():
             self.click_make_reservation_btn()
             self.click(self.DATE_PICKER)
@@ -159,7 +158,9 @@ class RestaurantPage(BasePage):
                         span_element = time_slot.find_element(By.CSS_SELECTOR, "span")
                         time_text = self.get_text_by_element(span_element)
                         self.highlight(span_element)
-                        print(f"time {time_text} is disabled cannot select time")
+                        allure.attach(body=f"{time_text}", name="time is disabled, cannot select time",
+                                      attachment_type=allure.attachment_type.TEXT)
+                        # print(f"time {time_text} is disabled cannot select time")
                     else:
                         span_element = time_slot.find_element(By.CSS_SELECTOR, "span")
                         time_text = self.get_text_by_element(span_element)
@@ -179,7 +180,7 @@ class RestaurantPage(BasePage):
                 except NoSuchElementException:
                     print("element not found")
 
-    @allure.step("click on 'make reservation' button - reservation on restarant page")
+    @allure.step("click on 'make reservation' button - reservation on restaurant page")
     def click_make_reservation_btn(self):
         self.click(self.ORDER_TABLE_BTN)
 
@@ -187,26 +188,3 @@ class RestaurantPage(BasePage):
         guests_element = self.driver.find_element(*self.NUM_OF_GUESTS)
         num_of_guests = guests_element.get_attribute("value")
         return num_of_guests
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

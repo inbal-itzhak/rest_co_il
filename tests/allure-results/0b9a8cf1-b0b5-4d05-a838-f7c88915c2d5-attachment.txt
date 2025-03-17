@@ -1,0 +1,11 @@
+open_hours_elements > 0 3
+["א'-ש'", '18:00-22:00']
+days: א'-ש'
+hours: 18:00-22:00
+start day is א'
+end day is ש'
+['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+hours range: ['18:00', '22:00']
+start_time: 18:00:00
+end_time: 22:00:00
+now: 10:57:24.421254

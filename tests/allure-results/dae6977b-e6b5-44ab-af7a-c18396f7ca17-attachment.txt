@@ -1,0 +1,28 @@
+open_hours_elements > 0 6
+["א'-ד'", '12:00-01:00']
+days: א'-ד'
+hours: 12:00-01:00
+start day is א'
+end day is ד'
+['Sun', 'Mon', 'Tue', 'Wed']
+hours range: ['12:00', '01:00']
+start_time: 12:00:00
+end_time: 01:00:00
+now: 10:57:16.068826
+['12:00-01:00']
+parts is not correct ['12:00-01:00']
+["ה'-ו'", '12:00-02:00']
+days: ה'-ו'
+hours: 12:00-02:00
+start day is ה'
+end day is ו'
+['Thu', 'Fri']
+['12:00-02:00']
+parts is not correct ['12:00-02:00']
+["ש'", '12:00-01:00']
+days: ש'
+hours: 12:00-01:00
+error in convert_hebrew_days_to_en not enough values to unpack (expected 2, got 1)
+None
+clicked search result
+is open attr = closed

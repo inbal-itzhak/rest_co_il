@@ -14,7 +14,9 @@ class TestSearch(BaseTest):
         self.search_menu.search_restaurant_explicit(rest_name_to_test)
         self.restaurant_page.wait_for_rest_page_to_load()
         rest_name = self.restaurant_page.get_rest_name()
-        print(f"type of rest_name is {type(rest_name)}, rest name is {rest_name}")
+        allure.attach(body=f"{rest_name}", name="restaurant name from restaurant page",
+                      attachment_type=allure.attachment_type.TEXT)
+        # print(f"type of rest_name is {type(rest_name)}, rest name is {rest_name}")
         assert rest_name_to_test in rest_name
 
     data = ["גרג"]
@@ -26,7 +28,9 @@ class TestSearch(BaseTest):
         self.search_menu.search_partial_text(text)
         self.restaurant_page.wait_for_rest_page_to_load()
         rest_name = self.restaurant_page.get_rest_name()
-        print(f"type of rest_name is {type(rest_name)}, rest name is {rest_name}")
+        allure.attach(body=f"{rest_name}", name="restaurant name in restaurant page:",
+                      attachment_type=allure.attachment_type.TEXT)
+        # print(f"type of rest_name is {type(rest_name)}, rest name is {rest_name}")
         assert text in self.restaurant_page.get_rest_name()
 
     data = ["ראש העין"]
@@ -41,7 +45,7 @@ class TestSearch(BaseTest):
         address_text = self.search_results.get_rest_details()
         assert text in address_text
 
-    data = [ "מסעדת בשרים","בתי קפה ", "ארוחת בוקר "]
+    data = ["מסעדת בשרים", "בתי קפה ", "ארוחת בוקר "]
 
     @allure.description("test search by cuisine type")
     @allure.title("test search by cuisine type")
@@ -68,7 +72,9 @@ class TestSearch(BaseTest):
     @pytest.mark.parametrize("text", data)
     def test_special_chars(self, text):
         search_string = "גרג" + text
-        print(f"search string: {search_string}")
+        allure.attach(body=f"{search_string}", name="search string",
+                      attachment_type=allure.attachment_type.TEXT)
+        # print(f"search string: {search_string}")
         clean_text = search_string.replace(text, " ")
         self.search_menu.search_partial_text_without_autocomplete_selection(search_string)
         results_page_load = self.search_results.wait_for_search_results_page_to_load()
@@ -82,11 +88,9 @@ class TestSearch(BaseTest):
     @allure.description("test for a string that has no results")
     @allure.title("test for a string that has no results")
     def test_no_results(self):
-        text = ("בש-רים")
+        text = "בש-רים"
         self.search_menu.search_partial_text_without_autocomplete_selection(text)
         results_page_load = self.search_results.wait_for_search_results_page_to_load()
         assert results_page_load is True
         search_results = self.search_results.get_all_search_results()
         assert len(search_results) == 0
-
-

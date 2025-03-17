@@ -1,7 +1,5 @@
 import allure
 from selenium.common import TimeoutException
-from selenium.webdriver import ActionChains
-
 from pages.base_page import BasePage
 from selenium.webdriver.common.by import By
 import datetime
@@ -38,13 +36,14 @@ class SearchResultsPage(BasePage):
         try:
             WebDriverWait(self.driver, 5).until(ec.visibility_of_element_located(self.SEARCH_SIDEBAR))
             return True
-        except TimeoutException :
-            print("results page did not load on time")
+        except TimeoutException:
+            allure.attach(body="results page did not load on time", name="results page did not load on time",
+                          attachment_type=allure.attachment_type.TEXT)
+            # print("results page did not load on time")
             return False
 
     @allure.step("check if restaurant is open now - search page")
     def is_rest_open_now(self):
-        open_hours = {}
         try:
             now = datetime.datetime.now().time()
             current_day = now.strftime("%a")
@@ -69,26 +68,37 @@ class SearchResultsPage(BasePage):
                                     print(f"hours range: {hours_range}")
                                     if len(hours_range) == 2:
                                         try:
-                                            start_time = datetime.datetime.strptime(hours_range[0].strip(), "%H:%M").time()
+                                            start_time = datetime.datetime.strptime(hours_range[0].strip(),
+                                                                                    "%H:%M").time()
                                             print(f"start_time: {start_time}")
-                                            end_time = datetime.datetime.strptime(hours_range[1].strip(), "%H:%M").time()
+                                            end_time = datetime.datetime.strptime(hours_range[1].strip(),
+                                                                                  "%H:%M").time()
                                             print(f"end_time: {end_time}")
                                             print(f"now: {now}")
                                             if start_time <= end_time:
                                                 if start_time <= now <= end_time:
-                                                    print("restaurant is open")
+                                                    allure.attach(body="restaurant is open", name="restaurant is open",
+                                                                  attachment_type=allure.attachment_type.TEXT)
+                                                    # print("restaurant is open")
                                                     self.click(self.IS_OPEN_STATUS)
                                                     return True
                                                 else:
-                                                    print("restaurant is closed")
+                                                    allure.attach(body="restaurant is closed",
+                                                                  name="restaurant is closed",
+                                                                  attachment_type=allure.attachment_type.TEXT)
+                                                    # print("restaurant is closed")
                                                     self.click(self.IS_OPEN_STATUS)
                                                     return False
                                             elif start_time <= now or now <= end_time:
-                                                print("restaurant is open")
+                                                allure.attach(body="restaurant is open", name="restaurant is open",
+                                                              attachment_type=allure.attachment_type.TEXT)
+                                                # print("restaurant is open")
                                                 self.click(self.IS_OPEN_STATUS)
                                                 return True
                                         except ValueError:
-                                            print("Error parsing time")
+                                            allure.attach(body="Error parsing time", name="Error parsing time",
+                                                          attachment_type=allure.attachment_type.TEXT)
+                                            # print("Error parsing time")
                                             return False
                                     else:
                                         print(f"hour range is incorrect: {hours_range}")
@@ -97,9 +107,13 @@ class SearchResultsPage(BasePage):
                             else:
                                 print(f"parts is not correct {parts}")
                     else:
-                        print(f"could not retrieve open status")
+                        allure.attach(body="could not retrieve open status", name="could not retrieve open status",
+                                      attachment_type=allure.attachment_type.TEXT)
+                        # print(f"could not retrieve open status")
         except Exception as e:
-            print(f"exception thrown: {e}")
+            allure.attach(body=f"{e}", name="exception thrown",
+                          attachment_type=allure.attachment_type.TEXT)
+            # print(f"exception thrown: {e}")
             return False
 
     def check_if_today_in_list(self, en_days):
@@ -115,13 +129,13 @@ class SearchResultsPage(BasePage):
 
     def convert_hebrew_days_to_en(self, day):
         hebrew_to_english = {
-        "א'" : "Sun",
-        "ב'" : "Mon",
-        "ג'" : "Tue",
-        "ד'" : "Wed",
-        "ה'" : "Thu",
-        "ו'" : "Fri",
-        "ש'" : "Sat"
+            "א'": "Sun",
+            "ב'": "Mon",
+            "ג'": "Tue",
+            "ד'": "Wed",
+            "ה'": "Thu",
+            "ו'": "Fri",
+            "ש'": "Sat"
         }
         try:
             hebrew_range = day.split()[0]
@@ -149,15 +163,23 @@ class SearchResultsPage(BasePage):
         for search_filter in filters:
             filter_text = self.get_text_by_element(search_filter)
             if search_string in filter_text:
-                print(f"search string {search_string} is in the search filter {filter_text} ")
+                allure.attach(body=f"search string {search_string} is in the search filter {filter_text}",
+                              name="search string is in search filter",
+                              attachment_type=allure.attachment_type.TEXT)
+                # print(f"search string {search_string} is in the search filter {filter_text} ")
                 return True
             else:
-                print(f"search string {search_string} is not in the search filter {filter_text} ")
+                allure.attach(body=f"search string {search_string} is not in the search filter {filter_text}",
+                              name="search string is not in search filter",
+                              attachment_type=allure.attachment_type.TEXT)
+                # print(f"search string {search_string} is not in the search filter {filter_text} ")
 
     def get_rest_details(self):
         rest_address = self.driver.find_element(*self.REST_DETAILS)
         address_text = self.get_text_by_element(rest_address)
-        print(address_text)
+        allure.attach(body=f"{address_text}", name="address text: ",
+                      attachment_type=allure.attachment_type.TEXT)
+        # print(address_text)
         return address_text
 
     def verify_rest_title_match_search(self, search_string):
@@ -176,7 +198,9 @@ class SearchResultsPage(BasePage):
                 percent_int = int(percent_text)
                 return percent_int
             except Exception as e:
-                print(f"{e}")
+                allure.attach(body=f"{e}", name="exception thrown",
+                              attachment_type=allure.attachment_type.TEXT)
+                # print(f"{e}")
                 return 0
 
     @allure.step("get restaurant number of reviews from search results")
@@ -190,7 +214,9 @@ class SearchResultsPage(BasePage):
             elif self.driver.find_element(self.NO_REVIEWS_INDICATOR):
                 return 0
         except Exception as e:
-            print(f"{e}")
+            allure.attach(body=f"{e}", name="exception thrown",
+                          attachment_type=allure.attachment_type.TEXT)
+            # print(f"{e}")
             return 0
 
     def get_rest_name(self):
@@ -205,14 +231,18 @@ class SearchResultsPage(BasePage):
         search_results = self.get_all_search_results()
         if len(search_results) > 0:
             try:
-                print(f"len of search results = {len(search_results)}")
+                allure.attach(body=f"{len(search_results)}", name="number of search results",
+                              attachment_type=allure.attachment_type.TEXT)
+                # print(f"len of search results = {len(search_results)}")
                 # search_results[0].find_element(By.CSS_SELECTOR, ".feature-column-photo").click()
                 # WebDriverWait(self.driver,10).until(ec.element_to_be_clickable(search_results[0]))
                 # self.click_el(search_results[0])
                 WebDriverWait(self.driver, 10).until(ec.element_to_be_clickable(self.REST_DETAILS_BTN)).click()
                 print("clicked search result")
             except Exception as e:
-                print(f"exceptin thrown {e}")
+                allure.attach(body=f"{e}", name="exception thrown",
+                              attachment_type=allure.attachment_type.TEXT)
+                # print(f"exceptin thrown {e}")
 
     def click_on_make_reservation(self):
         reservation_page = RestOrderReservationPage(self.driver)
@@ -222,13 +252,12 @@ class SearchResultsPage(BasePage):
                 reservation_page.wait_for_rest_res_page_to_load()
                 return True
             else:
-                print("no reservation link - unable to make reservation")
+                allure.attach(body="no reservation link - unable to make reservation",
+                              name="no reservation link - unable to make reservation",
+                              attachment_type=allure.attachment_type.TEXT)
+                # print("no reservation link - unable to make reservation")
                 return False
         except Exception as e:
-            print(f"exception in make reservation page: {e}")
-
-
-
-
-
-
+            allure.attach(body=f"{e}", name="exception in make reservation page",
+                          attachment_type=allure.attachment_type.TEXT)
+            # print(f"exception in make reservation page: {e}")
