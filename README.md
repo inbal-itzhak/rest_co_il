@@ -1,4 +1,4 @@
-# Restaurant Website Test Automation
+# Rest.co.il (by Zap) Website Test Automation
 
 This project automates tests for the restaurant website [https://www.rest.co.il/](https://www.rest.co.il/) using Selenium and pytest.
 
